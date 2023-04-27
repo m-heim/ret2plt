@@ -3,7 +3,7 @@ import os
 import sys
 
 def get_buffer_len(file_name: str) -> int:
-    for i in range(1, 2048, 4):
+    for i in range(1, 2048):
         if os.system(f'{file_name} {"A" * i}'):
             return i
     raise RuntimeError('Couldnt determine buffer length')
